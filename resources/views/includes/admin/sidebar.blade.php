@@ -34,9 +34,9 @@
 
 
                 <li
-                    class="nav-item has-treeview {{request()->is('master_barang', 'master_tipe_brg', 'stok', 'transaksi_barang_masuk') ? 'menu-open': ''}}">
+                    class="nav-item has-treeview {{request()->is('riwayat_transaksi', 'master_tipe_brg', 'stok', 'transaksi_barang_masuk') ? 'menu-open': ''}}">
                     <a href="#"
-                        class="nav-link {{request()->is('master_barang', 'master_tipe_brg','stok', 'transaksi_barang_masuk') ? 'active': ''}}">
+                        class="nav-link {{request()->is('riwayat_transaksi', 'master_tipe_brg','stok', 'transaksi_barang_masuk') ? 'active': ''}}">
                         <i class="nav-icon fas fa-shopping-cart"></i>
                         <p>
                             Manajemen ATK
@@ -64,23 +64,33 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item has-treeview ">
+                            <a href="/riwayat_transaksi"
+                                class="nav-link {{request()->is('riwayat_transaksi') ? 'active': ''}}">
+                                <i
+                                    class="far fa-circle nav-icon {{request()->is('riwayat_transaksi') ? 'far fa-dot-circle': ''}}"></i>
+                                <p>
+                                    Riwayat Transaksi
+                                </p>
+                            </a>
+                        </li>
                         
                     </ul>
                 </li>
 
                 @endif
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="transaksi_barang_keluar" class="nav-link {{request()->is('transaksi_barang_keluar') ? 'active': ''}}">
                         <i class="nav-icon fas fa-bars"></i>
                         <p>
                             Permintaan ATK
                         </p>
                     </a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a href="transaksi_ambil_barang" class="nav-link {{request()->is('transaksi_ambil_barang') ? 'active': ''}}">
-                        <i class="nav-icon fas fa-shopping-cart"></i>
+                        <i class="nav-icon fas fa-shopping-bag"></i>
                         <p>
                             Ambil ATK
                         </p>

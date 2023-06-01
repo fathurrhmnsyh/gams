@@ -10,6 +10,7 @@ use App\PermintaanBarang;
 use DataTables;
 use DB;
 use Auth;
+use PDF;
 use Illuminate\Support\Str;
 
 
@@ -28,11 +29,11 @@ class StokController extends Controller
             // ->where('data_status', '=', 'ACTIVE')
             ->get();
             return Datatables::of($data)
-            // ->addColumn('action', function($data){
-            //     return view('pages.master_barang.action_button._action_tipe', [
-            //         'model' => $data,
-            //     ]);
-            // })->rawColumns(['action'])
+            ->addColumn('action', function($data){
+                return view('pages.stok_barang.action_button.action_trans_masuk_void', [
+                    'model' => $data,
+                ]);
+            })->rawColumns(['action'])
             ->make(true);  
         }
     }
@@ -131,6 +132,48 @@ class StokController extends Controller
              return response()->json([
                 'status' => 'Successfully Add'
             ]);
+    }
+
+    public function void_barang_masuk(Request $request,$id)
+    {
+        // dd($id);
+        DB::beginTransaction();
+        try {
+            $get_data = DB::table('gams_stok_masuk')
+            ->where('id_stok_in','=', $id)
+            ->get();
+            $no_transaksi = $get_data[0]->no_transaksi;
+            $nama_barang = $get_data[0]->nama_barang;
+            $jumlah = $get_data[0]->jumlah;
+            
+            
+            $data = DB::table('gams_stok_masuk')
+                ->where('id_stok_in','=', $id)
+                ->delete();
+            
+
+            date_default_timezone_set("Asia/Jakarta");
+            $date = Carbon::now();
+            $time = Carbon::now()->format('H:i:s');
+            $status = "BARANG MASUK | VOID";
+            $user = Auth::user()->name;
+
+            DB::table('gams_stok_masuk_void')->insert([
+                'no_transaksi' => $no_transaksi,
+                'nama_barang' => $nama_barang,
+                'jumlah' => $jumlah,
+                'tipe' => $status,
+                'created_at' => $date,
+                'note' => $request->note !== '' ? $request->note : ''
+            ]);
+            DB::commit();
+            return response()->json([
+                'success' => true,
+            ]);
+        } catch (Exception $ex) {
+            DB::rollback();
+            return redirect()->back();
+        }
     }
 
     ////////////////////////////////////USER PAGE////////////////////////
@@ -457,4 +500,107 @@ class StokController extends Controller
         // $no_perm = $concatYnM.'-'.$permPlus;
 		return response()->json($no_perm);
     }
+    public function riwayat_trans ()
+    {
+        $barang = DB::table('gams_stok_barang')->get();
+        $section = DB::table('tb_section')->get();
+
+        return view('pages/riwayat_transaksi/index_riw', compact("barang","section"));
+    }
+    public function getdatatables_tk(Request $request)
+    {
+            if ($request->ajax()) {
+                $data = DB::table('gams_stok_keluar')
+                // ->select('*', DB::raw("sum(jumlah) as total"))
+                // ->groupByRaw('no_permintaan')
+                // ->where('data_status', '=', 'ACTIVE')
+                ->get();
+                return Datatables::of($data)
+                
+                ->make(true); 
+        }
+    }
+    public function getdatatables_tm(Request $request)
+    {
+            if ($request->ajax()) {
+                $data = DB::table('gams_stok_masuk')
+                // ->select('*', DB::raw("sum(jumlah) as total"))
+                // ->groupByRaw('no_permintaan')
+                // ->where('data_status', '=', 'ACTIVE')
+                ->get();
+                return Datatables::of($data)
+                
+                ->make(true); 
+        }
+    }
+    public function filter_data_barang(Request $request)
+    {
+        
+        $tipe = $request->tipe;
+        
+        $nama_barang = $request->nama_barang;
+        
+        if ($nama_barang != null) {
+            $nama_barang = $request->nama_barang;
+        }else{
+            $nama_barang = 'All';
+        }
+        // dd($item_name);
+        
+        $start = Carbon::parse($request->input('start'))->startOfDay();
+        $end = Carbon::parse($request->input('end'))->endOfDay();
+
+        if ($tipe == 'masuk') {
+            if ($nama_barang == 'All') {
+                # code...
+                $transactions = DB::table('gams_stok_masuk')->whereBetween('created_at', [$start, $end])->get();
+                $count_stin = DB::table('gams_stok_masuk')->whereBetween('created_at', [$start, $end])->sum('jumlah');
+            }else{
+                $transactions =DB::table('gams_stok_masuk')->whereBetween('created_at', [$start, $end])->where('nama_barang', '=', $nama_barang)->get();
+                $count_stin = DB::table('gams_stok_masuk')->whereBetween('created_at', [$start, $end])
+                    ->where('barang_name', '=', $nama_barang)
+                    ->sum('jumlah');
+            }
+            // dd($transactions);
+            $pdf = PDF::loadView('pages.riwayat_transaksi.report.barang_masuk', [
+                'item' => $nama_barang,
+                'data' => $transactions,
+                'start' => $start,
+                'end' => $end,
+                'jumlah' => $count_stin,
+            ]);
+            $pdf->setPaper('A4', 'portrait');
+            return $pdf->stream();
+        }else{
+
+            if ($nama_barang == 'All') {
+                $transactions = DB::table('gams_stok_keluar')->whereBetween('created_at', [$start, $end])->get();
+
+                $count_stin = DB::table('gams_stok_keluar')->whereBetween('created_at', [$start, $end])
+                        ->sum('jumlah');
+            }else{
+                $transactions = DB::table('gams_stok_keluar')->whereBetween('created_at', [$start, $end])->where('barang_name', '=', $nama_barang)->get();
+
+                $count_stin = DB::table('gams_stok_keluar')->whereBetween('created_at', [$start, $end])
+                        ->where('nama_barang', '=', $nama_barang)
+                        ->sum('jumlah');
+            }
+
+
+
+
+            // dd($count_stin);
+            $pdf = PDF::loadView('pages.riwayat_transaksi.report.barang_keluar', [
+                'item' => $nama_barang,
+                'data' => $transactions,
+                'start' => $start,
+                'end' => $end,
+                'jumlah' => $count_stin,
+            ]);
+            $pdf->setPaper('A4', 'portrait');
+            return $pdf->stream();
+        }
+
+    }
 }
+

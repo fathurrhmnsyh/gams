@@ -76,7 +76,13 @@ Route::group(['middleware' =>['auth', 'ceklevel:admin']], function(){
     Route::get('/transaksi_barang_masuk/auto_trans_masuk', 'StokController@auto_num_masuk')->name('transaksi_barang_masuk.auto_trans_masuk');
     Route::get('/transaksi_barang_masuk/get_data_barang', 'StokController@get_data_barang')->name('transaksi_barang_masuk.get_data_barang');
     Route::post('/transaksi_barang_masuk/store_data_barang', 'StokController@store_data_barang')->name('transaksi_barang_masuk.store_data_barang');
+    Route::post('/transaksi_barang_masuk/void/{id}', 'StokController@void_barang_masuk')->name('transaksi_barang_masuk.void_barang_masuk');
 
+    //RIWAYAT TRANSAKSI
+    Route::get('/riwayat_transaksi', 'StokController@riwayat_trans')->name('riwayat_transaksi');
+    Route::post('/riwayat_transaksi/getdatatables_tk', 'StokController@getdatatables_tk')->name('riwayat_transaksi.getdatatables_tk');
+    Route::post('/riwayat_transaksi/getdatatables_tm', 'StokController@getdatatables_tm')->name('riwayat_transaksi.getdatatables_tm');
+    Route::get('/riwayat_transaksi/filter_data_barang', 'StokController@filter_data_barang')->name('riwayat_transaksi.filter_data_barang');
 
      //user login
      Route::get('/userlog', 'AuthController@data');

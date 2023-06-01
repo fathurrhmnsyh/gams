@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2023 at 09:30 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Generation Time: Jun 01, 2023 at 10:04 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `employee` (
   `id` int(10) UNSIGNED NOT NULL,
   `nik` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) NOT NULL,
   `division_id` int(11) NOT NULL DEFAULT 0,
   `dept_id` int(11) NOT NULL DEFAULT 0,
   `section_id` int(11) NOT NULL DEFAULT 0,
@@ -210,10 +210,10 @@ INSERT INTO `employee` (`id`, `nik`, `name`, `division_id`, `dept_id`, `section_
 
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text NOT NULL,
+  `queue` text NOT NULL,
+  `payload` longtext NOT NULL,
+  `exception` longtext NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -231,7 +231,7 @@ CREATE TABLE `gams_master_barang` (
   `data_status` enum('ACTIVE','NOT ACTIVE') NOT NULL,
   `created_at` date DEFAULT NULL,
   `updated_at` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `gams_master_barang`
@@ -258,7 +258,7 @@ CREATE TABLE `gams_master_barang_log` (
   `status_change` varchar(50) NOT NULL,
   `user` varchar(50) NOT NULL,
   `note` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `gams_master_barang_log`
@@ -293,7 +293,7 @@ CREATE TABLE `gams_master_tipe_barang` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `data_status` enum('ACTIVE','NOT ACTIVE') DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `gams_master_tipe_barang`
@@ -320,7 +320,7 @@ CREATE TABLE `gams_master_unit_barang` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL,
   `data_status` enum('ACTIVE','NOT ACTIVE') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `gams_master_unit_barang`
@@ -359,7 +359,7 @@ CREATE TABLE `gams_permintaan_barang` (
   `apv_spv` varchar(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `gams_permintaan_barang`
@@ -397,15 +397,15 @@ CREATE TABLE `gams_stok_barang` (
   `created_by` varchar(50) NOT NULL,
   `created_at` date NOT NULL,
   `updated_at` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `gams_stok_barang`
 --
 
 INSERT INTO `gams_stok_barang` (`id_stok`, `nama_barang`, `kategori_barang`, `stok_barang`, `unit_barang`, `jml_per_unit`, `stok_pcs`, `data_status`, `created_by`, `created_at`, `updated_at`) VALUES
-(4, 'Acco Plastic', 'ATK', 3, 'PAK', 50, 150, 'ACTIVE', '', '2023-04-26', NULL),
-(5, 'Acco Steinless', 'ATK', 4, 'LUSIN', 12, 48, 'ACTIVE', '', '2023-04-26', NULL),
+(4, 'Acco Plastic', 'ATK', 3, 'PAK', 50, 130, 'ACTIVE', '', '2023-04-26', NULL),
+(5, 'Acco Steinless', 'ATK', 3, 'LUSIN', 12, 35, 'ACTIVE', '', '2023-04-26', NULL),
 (6, 'Address Telephone Index', 'ATK', 6, 'LUSIN', 12, 0, 'ACTIVE', '', '2023-04-27', NULL),
 (7, 'Amplop F4 Polos', 'ATK', 5, 'LUSIN', 12, 36, 'ACTIVE', '', '2023-04-27', NULL),
 (8, 'Amplop F4 TCH', 'ATK', 34, '', 0, 0, 'ACTIVE', '', '0000-00-00', NULL);
@@ -429,7 +429,34 @@ CREATE TABLE `gams_stok_keluar` (
   `jumlah` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `gams_stok_keluar`
+--
+
+INSERT INTO `gams_stok_keluar` (`id_stok_out`, `tanggal`, `no_trans`, `nik`, `nama`, `bagian`, `keterangan`, `nama_barang`, `kategori`, `jumlah`, `created_at`, `updated_at`) VALUES
+(7, '2023-05-29', '202305001', '5211', 'Fathur Rahmansyah', 'IT', 'Test', 'Acco Plastic', 'ATK', 1, '2023-05-29 14:02:00', '2023-05-29 14:02:00'),
+(8, '2023-05-30', '202305002', '5211', 'Fathur Rahmansyah', 'IT', 'Test', 'Acco Plastic', 'ATK', 20, '2023-05-30 04:42:19', '2023-05-30 04:42:19'),
+(9, '2023-05-30', '202305003', '5211', 'Fathur Rahmansyah', 'IT', 'Test', 'Acco Steinless', 'ATK', 13, '2023-05-30 05:59:41', '2023-05-30 05:59:41');
+
+--
+-- Triggers `gams_stok_keluar`
+--
+DELIMITER $$
+CREATE TRIGGER `gams_stok_keluar_after_insert` AFTER INSERT ON `gams_stok_keluar` FOR EACH ROW BEGIN
+	UPDATE gams_stok_barang SET stok_pcs = stok_pcs - NEW.jumlah 
+	WHERE nama_barang = NEW.nama_barang ;
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `gams_stok_keluar_bagi stok _unit` AFTER INSERT ON `gams_stok_keluar` FOR EACH ROW BEGIN
+	UPDATE gams_stok_barang SET stok_barang = stok_pcs / jml_per_unit
+	WHERE nama_barang = NEW.nama_barang ;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -449,7 +476,7 @@ CREATE TABLE `gams_stok_masuk` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `created_by` varchar(50) NOT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `gams_stok_masuk`
@@ -461,8 +488,7 @@ INSERT INTO `gams_stok_masuk` (`id_stok_in`, `no_transaksi`, `tanggal`, `keteran
 (19, '202304-003', '2023-04-27', 'dsadas', 'Sapu', 'Ballpoint', 'LUSIN', 24, '2023-04-27 04:33:56', 'Fathur Rahmansyah', '2023-04-27 04:33:56'),
 (20, '202304-003', '2023-04-27', 'dsadas', 'Mouse', 'Ballpoint', 'LUSIN', 36, '2023-04-27 04:33:56', 'Fathur Rahmansyah', '2023-04-27 04:33:56'),
 (21, '202304-004', '2023-04-27', 'untuk', 'Sapu', 'Ballpoint', 'LUSIN', 12, '2023-04-27 04:43:56', 'Fathur Rahmansyah', '2023-04-27 04:43:56'),
-(22, '202304-005', '2023-04-27', 'untuk', 'Kertas A4 Putih', 'Kertas', 'PCS', 18, '2023-04-27 08:32:52', 'Fathur Rahmansyah', '2023-04-27 08:32:52'),
-(23, '202304-006', '2023-04-27', 'untuk', 'Kertas A4 Putih', 'Kertas', 'PCS', 3, '2023-04-27 08:33:21', 'Fathur Rahmansyah', '2023-04-27 08:33:21');
+(22, '202304-005', '2023-04-27', 'untuk', 'Kertas A4 Putih', 'Kertas', 'PCS', 18, '2023-04-27 08:32:52', 'Fathur Rahmansyah', '2023-04-27 08:32:52');
 
 --
 -- Triggers `gams_stok_masuk`
@@ -485,12 +511,56 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `gams_stok_masuk_void`
+--
+
+CREATE TABLE `gams_stok_masuk_void` (
+  `id_gsm_log` int(11) NOT NULL,
+  `no_transaksi` varchar(20) NOT NULL,
+  `nama_barang` varchar(50) NOT NULL,
+  `jumlah` int(11) NOT NULL,
+  `tipe` varchar(50) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `note` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `gams_stok_masuk_void`
+--
+
+INSERT INTO `gams_stok_masuk_void` (`id_gsm_log`, `no_transaksi`, `nama_barang`, `jumlah`, `tipe`, `created_at`, `note`) VALUES
+(1, '202304-006', 'Kertas A4 Putih', 3, 'BARANG MASUK | VOID', '2023-06-01 03:14:52', 'ss'),
+(2, '202306-001', 'Acco Plastic', 150, 'BARANG MASUK | VOID', '2023-06-01 04:26:29', '33'),
+(3, '202306-001', 'Acco Plastic', 50, 'BARANG MASUK | VOID', '2023-06-01 06:25:56', '2123'),
+(4, '202306-001', 'Acco Plastic', 50, 'BARANG MASUK | VOID', '2023-06-01 06:29:38', 'trtr');
+
+--
+-- Triggers `gams_stok_masuk_void`
+--
+DELIMITER $$
+CREATE TRIGGER `gams_stok_masuk_void` AFTER INSERT ON `gams_stok_masuk_void` FOR EACH ROW BEGIN
+	UPDATE gams_stok_barang SET stok_pcs = stok_pcs - NEW.jumlah 
+	WHERE nama_barang = NEW.nama_barang ;
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `gams_stok_masuk_void_bagi_unit` AFTER INSERT ON `gams_stok_masuk_void` FOR EACH ROW BEGIN
+		UPDATE gams_stok_barang SET stok_barang = stok_pcs / jml_per_unit
+		WHERE nama_barang = NEW.nama_barang ;
+END
+$$
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `migration` varchar(255) NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -538,8 +608,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `password_resets` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -551,9 +621,9 @@ CREATE TABLE `password_resets` (
 
 CREATE TABLE `permissions` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `display_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `display_name` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -578,7 +648,7 @@ CREATE TABLE `permission_role` (
 CREATE TABLE `permission_user` (
   `permission_id` bigint(20) UNSIGNED NOT NULL,
   `user_id` bigint(20) UNSIGNED NOT NULL,
-  `user_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `user_type` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -589,16 +659,16 @@ CREATE TABLE `permission_user` (
 
 CREATE TABLE `printer` (
   `id` int(10) UNSIGNED NOT NULL,
-  `kode_fa` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kode_fa` varchar(50) NOT NULL,
   `purc_date` date DEFAULT NULL,
-  `purc_ppb` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `serial_number` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `printer_merk` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `printer_type` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `code` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `info` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `purc_ppb` varchar(50) NOT NULL,
+  `serial_number` varchar(20) DEFAULT NULL,
+  `printer_merk` varchar(100) NOT NULL,
+  `printer_type` varchar(50) DEFAULT NULL,
+  `type` varchar(50) NOT NULL,
+  `code` varchar(10) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `info` varchar(50) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -676,9 +746,9 @@ INSERT INTO `printer` (`id`, `kode_fa`, `purc_date`, `purc_ppb`, `serial_number`
 
 CREATE TABLE `roles` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `display_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `display_name` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -692,7 +762,7 @@ CREATE TABLE `roles` (
 CREATE TABLE `role_user` (
   `role_id` bigint(20) UNSIGNED NOT NULL,
   `user_id` bigint(20) UNSIGNED NOT NULL,
-  `user_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `user_type` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -704,7 +774,7 @@ CREATE TABLE `role_user` (
 CREATE TABLE `tb_dept` (
   `id` int(10) UNSIGNED NOT NULL,
   `division_id` int(11) NOT NULL,
-  `dept` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dept` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -746,7 +816,7 @@ INSERT INTO `tb_dept` (`id`, `division_id`, `dept`, `created_at`, `updated_at`) 
 
 CREATE TABLE `tb_div` (
   `id` int(10) UNSIGNED NOT NULL,
-  `divisi` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `divisi` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -773,7 +843,7 @@ INSERT INTO `tb_div` (`id`, `divisi`, `created_at`, `updated_at`) VALUES
 CREATE TABLE `tb_section` (
   `id` int(10) UNSIGNED NOT NULL,
   `dept_id` int(11) NOT NULL,
-  `section` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `section` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -822,14 +892,14 @@ INSERT INTO `tb_section` (`id`, `dept_id`, `section`, `created_at`, `updated_at`
 
 CREATE TABLE `user` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `role` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `section` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `position` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nik` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role` varchar(45) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `section` varchar(255) NOT NULL,
+  `position` varchar(255) NOT NULL,
+  `nik` varchar(255) NOT NULL,
   `nik_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -853,11 +923,11 @@ INSERT INTO `user` (`id`, `role`, `name`, `section`, `position`, `nik`, `nik_ver
 
 CREATE TABLE `users_old` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -925,6 +995,12 @@ ALTER TABLE `gams_stok_keluar`
 --
 ALTER TABLE `gams_stok_masuk`
   ADD PRIMARY KEY (`id_stok_in`);
+
+--
+-- Indexes for table `gams_stok_masuk_void`
+--
+ALTER TABLE `gams_stok_masuk_void`
+  ADD PRIMARY KEY (`id_gsm_log`);
 
 --
 -- Indexes for table `migrations`
@@ -1067,13 +1143,19 @@ ALTER TABLE `gams_stok_barang`
 -- AUTO_INCREMENT for table `gams_stok_keluar`
 --
 ALTER TABLE `gams_stok_keluar`
-  MODIFY `id_stok_out` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_stok_out` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `gams_stok_masuk`
 --
 ALTER TABLE `gams_stok_masuk`
-  MODIFY `id_stok_in` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_stok_in` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT for table `gams_stok_masuk_void`
+--
+ALTER TABLE `gams_stok_masuk_void`
+  MODIFY `id_gsm_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `migrations`
