@@ -16,12 +16,12 @@
         
         </style>
         <meta charset="UTF-8">
-        @include('pages/riwayat_transaksi/report/css_')
+        @include('pages/laporan_transaksi/report/css_')
 </head>
 
 <body>
     <p style="font-size:14px; margin-top:0px"><b>PT. TRIMITRA CHITRAHASTA</b></p>
-    <p style="font-size:18px;text-align: center; margin-top:0px;"><b><u>LAPORAN BARANG MASUK </u><b></p>
+    <p style="font-size:18px;text-align: center; margin-top:0px;"><b><u>LAPORAN TRANSAKSI BARANG MASUK </u><b></p>
     <div style="font-size: 14px" class="table-head-left">
         <table>
             <tr>
@@ -59,14 +59,8 @@
     </table>
     <table class="table2 table-striped table-bordered" cellpadding="3" cellspacing="0" width="100%">
         <tr>
-            <td align="center" colspan="3">Total</td>
-            <td align="center" >{{$jumlah}}</td>
-            {{-- <td style="width: 3.1cm"></td>
-            <td style="width: 3.2cm" align="center">Nama Jelas</td>
-            <td style="width: 3cm" align="center">Jabatan</td>
-            <td style="width: 3cm" align="center">Departmen</td>
-            <td style="width: 3cm" align="center">Tanda Tangan</td>
-            <td style="width: 3.5cm" align="center">Tanggal</td> --}}
+            <td align="center" style="width: 9,5cm" >Total</td>
+            <td align="center" style="width: 3.3cm">{{$jumlah}}</td>
         </tr>
     </table>
     <p style="font-size: 11px; text-align:center"> <?php 

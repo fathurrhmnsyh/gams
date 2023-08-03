@@ -34,9 +34,9 @@
 
 
                 <li
-                    class="nav-item has-treeview {{request()->is('riwayat_transaksi', 'master_tipe_brg', 'stok', 'transaksi_barang_masuk') ? 'menu-open': ''}}">
+                    class="nav-item has-treeview {{request()->is('laporan_transaksi','riwayat_transaksi', 'master_tipe_brg', 'stok', 'transaksi_barang_masuk') ? 'menu-open': ''}}">
                     <a href="#"
-                        class="nav-link {{request()->is('riwayat_transaksi', 'master_tipe_brg','stok', 'transaksi_barang_masuk') ? 'active': ''}}">
+                        class="nav-link {{request()->is('laporan_transaksi','riwayat_transaksi', 'master_tipe_brg','stok', 'transaksi_barang_masuk') ? 'active': ''}}">
                         <i class="nav-icon fas fa-shopping-cart"></i>
                         <p>
                             Manajemen ATK
@@ -71,6 +71,16 @@
                                     class="far fa-circle nav-icon {{request()->is('riwayat_transaksi') ? 'far fa-dot-circle': ''}}"></i>
                                 <p>
                                     Riwayat Transaksi
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview ">
+                            <a href="/laporan_transaksi"
+                                class="nav-link {{request()->is('laporan_transaksi') ? 'active': ''}}">
+                                <i
+                                    class="far fa-circle nav-icon {{request()->is('laporan_transaksi') ? 'far fa-dot-circle': ''}}"></i>
+                                <p>
+                                    Laporan Transaksi
                                 </p>
                             </a>
                         </li>

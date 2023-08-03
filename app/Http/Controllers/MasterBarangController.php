@@ -27,13 +27,17 @@ class MasterBarangController extends Controller
     }
     public function store_tipe(Request $request)
     {
+        date_default_timezone_set("Asia/Jakarta");
+        $date = Carbon::now();
         $tipe_barang = $request->tipe;
         $data_status = "ACTIVE";
 
         if ($request->ajax()){
             DB::table('gams_master_tipe_barang')->insert([
                 'tipe_barang' => $tipe_barang,
-                'data_status' => $data_status
+                'data_status' => $data_status,
+                'created_at' => $date
+
             ]);
         }
 

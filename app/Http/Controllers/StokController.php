@@ -7,11 +7,14 @@ use Carbon\Carbon;
 use App\StokMasuk;
 use App\StokKeluar;
 use App\PermintaanBarang;
+use Maatwebsite\Excel\Facades\Excel;
 use DataTables;
 use DB;
 use Auth;
 use PDF;
 use Illuminate\Support\Str;
+
+
 
 
 class StokController extends Controller
@@ -533,74 +536,9 @@ class StokController extends Controller
                 ->make(true); 
         }
     }
-    public function filter_data_barang(Request $request)
-    {
-        
-        $tipe = $request->tipe;
-        
-        $nama_barang = $request->nama_barang;
-        
-        if ($nama_barang != null) {
-            $nama_barang = $request->nama_barang;
-        }else{
-            $nama_barang = 'All';
-        }
-        // dd($item_name);
-        
-        $start = Carbon::parse($request->input('start'))->startOfDay();
-        $end = Carbon::parse($request->input('end'))->endOfDay();
+    
 
-        if ($tipe == 'masuk') {
-            if ($nama_barang == 'All') {
-                # code...
-                $transactions = DB::table('gams_stok_masuk')->whereBetween('created_at', [$start, $end])->get();
-                $count_stin = DB::table('gams_stok_masuk')->whereBetween('created_at', [$start, $end])->sum('jumlah');
-            }else{
-                $transactions =DB::table('gams_stok_masuk')->whereBetween('created_at', [$start, $end])->where('nama_barang', '=', $nama_barang)->get();
-                $count_stin = DB::table('gams_stok_masuk')->whereBetween('created_at', [$start, $end])
-                    ->where('barang_name', '=', $nama_barang)
-                    ->sum('jumlah');
-            }
-            // dd($transactions);
-            $pdf = PDF::loadView('pages.riwayat_transaksi.report.barang_masuk', [
-                'item' => $nama_barang,
-                'data' => $transactions,
-                'start' => $start,
-                'end' => $end,
-                'jumlah' => $count_stin,
-            ]);
-            $pdf->setPaper('A4', 'portrait');
-            return $pdf->stream();
-        }else{
+  
 
-            if ($nama_barang == 'All') {
-                $transactions = DB::table('gams_stok_keluar')->whereBetween('created_at', [$start, $end])->get();
-
-                $count_stin = DB::table('gams_stok_keluar')->whereBetween('created_at', [$start, $end])
-                        ->sum('jumlah');
-            }else{
-                $transactions = DB::table('gams_stok_keluar')->whereBetween('created_at', [$start, $end])->where('barang_name', '=', $nama_barang)->get();
-
-                $count_stin = DB::table('gams_stok_keluar')->whereBetween('created_at', [$start, $end])
-                        ->where('nama_barang', '=', $nama_barang)
-                        ->sum('jumlah');
-            }
-
-
-
-
-            // dd($count_stin);
-            $pdf = PDF::loadView('pages.riwayat_transaksi.report.barang_keluar', [
-                'item' => $nama_barang,
-                'data' => $transactions,
-                'start' => $start,
-                'end' => $end,
-                'jumlah' => $count_stin,
-            ]);
-            $pdf->setPaper('A4', 'portrait');
-            return $pdf->stream();
-        }
-
-    }
 }
 

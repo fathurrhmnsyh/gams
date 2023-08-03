@@ -48,12 +48,21 @@ class DashboardController extends Controller
         // ->GroupBy(DB::raw("MONTHNAME(created_at)"))
         // ->pluck('bulan');
 
-    
+        $kategori = DB::table('gams_master_tipe_barang AS tipe')
+            ->where('data_status', '=', 'ACTIVE')
+            ->get();
+        $tot_kategori = DB::table('gams_master_tipe_barang AS tipe')
+            ->where('data_status', '=', 'ACTIVE')
+            ->count('tipe_barang');
+        // dd($tot_kategori);
 
+        $stok = DB::table('gams_stok_barang')
+            ->select('kategori_barang', DB::raw('count(kategori_barang) as total_barang'))
+            ->groupBy('kategori_barang')
+            ->get();
+            // dd($stok);
 
-
-
-        return view('pages.dashboard.index');
+        return view('pages.dashboard.index', compact("kategori", "stok", "tot_kategori"));
     }
     public function user_index()
     {

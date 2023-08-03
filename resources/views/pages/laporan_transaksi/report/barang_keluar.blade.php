@@ -16,12 +16,12 @@
         
         </style>
         <meta charset="UTF-8">
-        @include('pages/riwayat_transaksi/report/css_')
+        @include('pages/laporan_transaksi/report/css_')
 </head>
 
 <body>
     <p style="font-size:14px; margin-top:0px"><b>PT. TRIMITRA CHITRAHASTA</b></p>
-    <p style="font-size:18px;text-align: center; margin-top:0px;"><b><u>LAPORAN BARANG KELUAR </u><b></p>
+    <p style="font-size:18px;text-align: center; margin-top:0px;"><b><u>LAPORAN TRANSAKSI BARANG KELUAR </u><b></p>
     <div style="font-size: 14px" class="table-head-left">
         <table>
             <tr>
