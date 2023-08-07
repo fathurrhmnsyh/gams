@@ -40,7 +40,7 @@
                                     <div class="datatable datatable-primary">
                                         <div class="table-responsive">
                                             <div class="dataTables_scrollBody"
-                                                style="position: relative; overflow: auto; max-height: 200px; width: 100%;">
+                                                style="position: relative; overflow: auto; max-height: 300px; width: 100%;">
                                                 <table id="tbl-st-in" class="table table-bordered table-hover"
                                                     width="100%">
                                                     {{-- style="background-color: #D3D3D3" --}}

@@ -191,7 +191,7 @@ class ReportController extends Controller
         $transactions_masuk = DB::table('gams_stok_masuk')
                             ->whereBetween('tanggal', [$startDate, $endDate])
                             ->where('nama_barang', '=', $nama_barang)
-                            ->select('no_transaksi AS description','tanggal','nama_barang','keterangan','jumlah')
+                            ->select('no_transaksi AS description','tanggal','nama_barang','keterangan','created_by AS nama','jumlah')
                             ->get();
         
 
@@ -202,13 +202,14 @@ class ReportController extends Controller
         $transactions_keluar = DB::table('gams_stok_keluar')
                             ->whereBetween('tanggal', [$startDate, $endDate])
                             ->where('nama_barang', '=', $nama_barang)
-                            ->select('tanggal','nama_barang','no_trans AS description','keterangan','jumlah')
+                            ->select('tanggal','nama_barang','no_trans AS description','keterangan','nama','jumlah')
                             ->get();
         $transactions_keluar->map(function ($item) {
             $item->type = 'Out';
             return $item;
         });
         $transactions_combined = $transactions_masuk->concat($transactions_keluar);
+        // dd($transactions_combined);
         // $transactions_combined = $transactions_masuk->merge($transactions_keluar);
         $pdf = PDF::loadView('pages.laporan_transaksi.report.pdf_kartu_stok', [
             'item' => $nama_barang,

@@ -39,13 +39,13 @@
     <br><br>
     <table class="table1 table-striped table-bordered" cellpadding="3" cellspacing="0" width="100%">
         <tr>
-            <td align="center" style="width: 0.5cm">No</td>
-            <td align="center" style="width: 2.9cm">Tanggal</td>
-            <td align="center" style="width: 5.7cm">Description</td>
+            <td align="center" style="width: 0.5cm ;font-size:10">No</td>
+            <td align="center" style="width: 2.9cm ;font-size:10">Tanggal / No Trans</td>
+            <td align="center" style="width: 5.7cm ;font-size:10">Description</td>
             {{-- <td align="center" style="width: 6cm">No PPB</td> --}}
-            <td align="center" style="width: 2cm">In / Debit</td>
-            <td align="center" style="width: 2cm">Out / Kredit</td>
-            <td align="center" style="width: 2cm">Balance</td>
+            <td align="center" style="width: 2cm ;font-size:10">In / Debit</td>
+            <td align="center" style="width: 2cm ;font-size:10">Out / Kredit</td>
+            <td align="center" style="width: 2cm ;font-size:10">Balance</td>
         </tr>
         @php
             $balance = $bal; // Inisialisasi balance dengan nilai awal 0
@@ -53,36 +53,38 @@
         @endphp
         <tr>
 
-            <td style="vertical-align: text-top; font-size:12">1</td>
-            <td style="vertical-align: text-top; font-size:12">{{ $last_month }}</td>
-            <td style="vertical-align: text-top; font-size:12">Beginning Balance</td>
-            <td align="center" style="vertical-align: text-top; font-size:12">0</td>
-            <td align="center" style="vertical-align: text-top; font-size:12">0</td>
-            <td align="center" style="vertical-align: text-top; font-size:12">{{ $balance }}</td>
+            <td style="vertical-align: text-top; font-size:10">1</td>
+            <td style="vertical-align: text-top; font-size:10">{{ $last_month }}</td>
+            <td style="vertical-align: text-top; font-size:10">Beginning Balance</td>
+            <td align="center" style="vertical-align: text-top; font-size:10">0</td>
+            <td align="center" style="vertical-align: text-top; font-size:10">0</td>
+            <td align="center" style="vertical-align: text-top; font-size:10">{{ $balance }}</td>
         </tr>
         @php $i=2 @endphp
         @foreach ($data as $t)
             <tr>
 
-                <td style="vertical-align: text-top; font-size:12">{{ $i++ }}</td>
-                <td style="vertical-align: text-top; font-size:12">{{ $t->tanggal }}</td>
-                <td style="vertical-align: text-top; font-size:12">
-                    {{ $t->description }}/&nbsp;{{ $t->type }}/&nbsp;{{ $t->keterangan }}</td>
-                <td align="center" style="vertical-align: text-top; font-size:12">
+                <td style="vertical-align: text-top; font-size:10">{{ $i++ }}</td>
+                <td style="vertical-align: text-top; font-size:10">{{ $t->tanggal }}&nbsp;/&nbsp;{{ $t->description }}
+                </td>
+                <td style="vertical-align: text-top; font-size:10">
+                    {{ $t->keterangan }}/&nbsp;{{ $t->nama }}
+                </td>
+                <td align="center" style="vertical-align: text-top; font-size:10">
                     @if ($t->type === 'In')
                         {{ $t->jumlah }}
                     @elseif ($t->type === 'Out')
                         {{ 0 }}
                     @endif
                 </td>
-                <td align="center" style="vertical-align: text-top; font-size:12">
+                <td align="center" style="vertical-align: text-top; font-size:10">
                     @if ($t->type === 'Out')
                         {{ $t->jumlah }}
                     @elseif ($t->type === 'In')
                         {{ 0 }}
                     @endif
                 </td>
-                <td align="center" style="vertical-align: text-top; font-size:12">@php
+                <td align="center" style="vertical-align: text-top; font-size:10">@php
                     if ($t->type === 'In') {
                         $balance += $t->jumlah;
                     } elseif ($t->type === 'Out') {

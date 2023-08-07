@@ -470,5 +470,8 @@
             var table = $('#tbl-st-in').DataTable();
             table.rows().remove().draw();
         }
+        window.setTimeout(function() {
+            window.location.reload();
+        }, 1500000);
     </script>
 @endpush
