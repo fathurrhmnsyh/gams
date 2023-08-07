@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2023 at 10:04 AM
+-- Generation Time: Aug 07, 2023 at 06:23 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -45,7 +45,6 @@ CREATE TABLE `employee` (
 INSERT INTO `employee` (`id`, `nik`, `name`, `division_id`, `dept_id`, `section_id`, `created_at`, `updated_at`) VALUES
 (1, 5211, 'Fathur Rahmansyah', 1, 4, 4, '2021-07-30 04:23:26', '2021-07-30 04:23:29'),
 (2, 5254, 'Hanifan Musliman', 1, 4, 4, '2021-07-30 04:24:00', '2021-07-30 04:24:02'),
-(3, 5258, 'Aldi Abdu Malik', 1, 4, 4, '2021-09-21 02:10:53', '2021-09-21 02:10:54'),
 (5, 1020, 'Zaenal Arifin', 1, 1, 1, NULL, NULL),
 (6, 1011, 'Lisdyah Windayani', 1, 3, 3, NULL, NULL),
 (7, 1017, 'Sunarti', 1, 3, 3, NULL, NULL),
@@ -188,14 +187,12 @@ INSERT INTO `employee` (`id`, `nik`, `name`, `division_id`, `dept_id`, `section_
 (149, 3507, 'Yeyeh Supriatna', 6, 18, 28, NULL, NULL),
 (150, 3508, 'Hermanto', 6, 18, 28, NULL, NULL),
 (151, 3754, 'Okih Priyatno', 6, 18, 28, NULL, NULL),
-(152, 4102, 'Mohamad Zulfikar Zaen Fikri', 6, 18, 28, NULL, NULL),
 (153, 4247, 'Aan Syahrofik', 6, 18, 28, NULL, NULL),
 (154, 4417, 'Ari Meiwanto', 6, 18, 28, NULL, NULL),
 (155, 4509, 'Yan Tandi Raru', 6, 18, 28, NULL, NULL),
 (156, 5100, 'Eko Prasetio', 6, 18, 28, NULL, NULL),
 (159, 5247, 'Adika Akhmad Zufri', 4, 10, 14, NULL, NULL),
 (160, 5294, 'Wildan Adji Nugroho', 1, 4, 4, NULL, NULL),
-(161, 300372, 'Lala Sonia', 6, 18, 28, NULL, NULL),
 (162, 5322, 'Wildan Adriansyah', 4, 10, 30, NULL, NULL),
 (163, 5302, 'Taufiq Insan Khoiri', 4, 10, 13, NULL, NULL),
 (164, 5441, 'Dandy Armeido F', 4, 10, 13, NULL, NULL),
@@ -238,11 +235,240 @@ CREATE TABLE `gams_master_barang` (
 --
 
 INSERT INTO `gams_master_barang` (`id_barang`, `nama_barang`, `kategori_barang`, `unit_barang`, `data_status`, `created_at`, `updated_at`) VALUES
-(24, 'Acco Plastik', 'ATK', 'PAK (50)', 'ACTIVE', '2023-04-26', NULL),
-(25, 'Acco Steinless', 'ATK', 'PAK (50)', 'ACTIVE', '2023-04-26', NULL),
-(26, 'Address Telephone Index', 'ATK', 'BUKU', 'ACTIVE', '2023-04-26', NULL),
-(27, 'Amplop F4 Polos', 'ATK', 'BOX', 'ACTIVE', '2023-04-27', NULL),
-(28, 'Amplop F4 TCH', 'ATK', 'PAK (100)', 'ACTIVE', '2023-04-27', NULL);
+(2, 'Acco Plastik', 'ATK', 'PAK (50)', 'ACTIVE', NULL, NULL),
+(3, 'Acco Steinless', 'ATK', 'PAK (50)', 'ACTIVE', NULL, NULL),
+(4, 'Adress & Telephone Index', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(5, 'Amplop F4 Polos', 'ATK', 'BOX (100)', 'ACTIVE', NULL, NULL),
+(6, 'Amplop F4 Tch', 'ATK', 'PAK (100)', 'ACTIVE', NULL, NULL),
+(7, 'Amplop Gaji', 'ATK', 'PAK (100)', 'ACTIVE', NULL, NULL),
+(8, 'Amplop Kecil Polos No.110', 'ATK', 'BOX (100)', 'ACTIVE', NULL, NULL),
+(9, 'Amplop No.90 Polos', 'ATK', 'BOX (100)', 'ACTIVE', NULL, NULL),
+(10, 'Amplop No.90 Tch', 'ATK', 'BOX (100)', 'ACTIVE', NULL, NULL),
+(11, 'Ballpoint', 'ATK', 'LUSIN (12)', 'ACTIVE', NULL, NULL),
+(12, 'Ballpoint (isi)', 'ATK', 'LUSIN (144)', 'ACTIVE', NULL, NULL),
+(13, 'Ballpoint Biru', 'ATK', 'LUSIN (12)', 'ACTIVE', NULL, NULL),
+(14, 'Ballpoint Meja Tripfelo', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(15, 'Ballpoint OPF Biru', 'ATK', 'LUSIN (12)', 'ACTIVE', NULL, NULL),
+(16, 'Ballpoint OPF Hijau', 'ATK', 'LUSIN (12)', 'ACTIVE', NULL, NULL),
+(17, 'Ballpoint OPF Hitam', 'ATK', 'LUSIN (12)', 'ACTIVE', NULL, NULL),
+(18, 'Ballpoint OPF Merah', 'ATK', 'LUSIN (12)', 'ACTIVE', NULL, NULL),
+(19, 'Ballpoint OPF Ungu', 'ATK', 'LUSIN (12)', 'ACTIVE', NULL, NULL),
+(20, 'Ballpoint OPM Biru', 'ATK', 'LUSIN (12)', 'ACTIVE', NULL, NULL),
+(21, 'Ballpoint OPM Hitam', 'ATK', 'LUSIN (12)', 'ACTIVE', NULL, NULL),
+(22, 'Ballpoint OPM Merah', 'ATK', 'LUSIN (12)', 'ACTIVE', NULL, NULL),
+(23, 'Baterai 23 A', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(24, 'Baterai 9V', 'ATK', 'BOX (12)', 'ACTIVE', NULL, NULL),
+(25, 'Baterai A2', 'ATK', 'SET (2)', 'ACTIVE', NULL, NULL),
+(26, 'Baterai A3', 'ATK', 'SET (2)', 'ACTIVE', NULL, NULL),
+(27, 'Baterai C2', 'ATK', 'SET (2)', 'ACTIVE', NULL, NULL),
+(28, 'Baterai CR1616', 'ATK', 'BOX (10)', 'ACTIVE', NULL, NULL),
+(29, 'Baterai CR2025', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(30, 'Baterai CR2032', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(31, 'Baterai D2', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(32, 'Baterai LR41', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(33, 'Baterai LR44', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(34, 'Baterai Recharge A2', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(35, 'Baterai Recharge A3', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(36, 'Binder Clip 107', 'ATK', 'BOX (12)', 'ACTIVE', NULL, NULL),
+(37, 'Binder Clip 155', 'ATK', 'BOX (12)', 'ACTIVE', NULL, NULL),
+(38, 'Binder Clip 200', 'ATK', 'BOX (12)', 'ACTIVE', NULL, NULL),
+(39, 'Binder Clip 260', 'ATK', 'BOX (12)', 'ACTIVE', NULL, NULL),
+(40, 'Box File Bantex 4011', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(41, 'Buku Expedisi', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(42, 'Buku Folio', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(43, 'Buku Kwarto', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(44, 'Buku Saku', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(45, 'Buku Sidu', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(46, 'Bussiness File A4', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(47, 'Bussiness File F4', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(48, 'Card Case A3', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(49, 'Card Case A4', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(50, 'Clear Holder A4', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(51, 'Clear Holder F4', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(52, 'Clear Holder Felix CH1160 Folio', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(53, 'Clip Board', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(54, 'Colour Magnet', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(55, 'Continous Form 2 Fly A4', 'ATK', 'RIM (500)', 'ACTIVE', NULL, NULL),
+(56, 'Continous Form 2 Fly A5', 'ATK', 'RIM (500)', 'ACTIVE', NULL, NULL),
+(57, 'Continous Form 3 Fly A4', 'ATK', 'RIM (500)', 'ACTIVE', NULL, NULL),
+(58, 'Continous Form 3 Fly A5', 'ATK', 'RIM (500)', 'ACTIVE', NULL, NULL),
+(59, 'Cutter Besar', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(60, 'Cutter Kecil', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(61, 'Dermatograf Coklat', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(62, 'Dermatograp Hitam', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(63, 'Dermatograp Kuning', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(64, 'Dermatograp Putih', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(65, 'Divider/ Pembatas Kertas', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(66, 'Double Tipe 1\'', 'ATK', 'BOX (10)', 'ACTIVE', NULL, NULL),
+(67, 'Form Advance Payment', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(68, 'Form Bukti Pengeluaran Kas', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(69, 'Form Cuti', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(70, 'Form Daftar Normatif Entertainment', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(71, 'Form Izin Dinas Luar', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(72, 'Form Laporan Biaya', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(73, 'Form Laporan Biaya Prjln Dns Lr Kt', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(74, 'Form Memo Polos', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(75, 'Form Peminjaman Kendaraan', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(76, 'Form Penerimaan Bank', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(77, 'Form Pengambilan Material', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(78, 'Form Pengeluaran Bank', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(79, 'Form Pengeluaran Kas', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(80, 'Form Permintaan Atk', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(81, 'Form Permohonan Izin', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(82, 'Form Rekapan S.Jalan Cust.', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(83, 'Form Rekapan S.Jalan Suplyr.', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(84, 'Form Risalah Rapat Hal : 1', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(85, 'Form Risalah Rapat Hal : 2', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(86, 'Form Service Kendaraan', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(87, 'Form SPL', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(88, 'Form Tanda Terima', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(89, 'Form Work Order', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(90, 'Formulir Kunjungan Tamu', 'ATK', 'BUKU (1)', 'ACTIVE', NULL, NULL),
+(91, 'Gunting Besar', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(92, 'Gunting Kecil', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(93, 'Isi Cutter Besar', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(94, 'Isi Cutter Kecil', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(95, 'Isi Pensil', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(96, 'Kalkulator 868 L', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(97, 'Kalkulator Saku', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(98, 'Kartu Absensi', 'ATK', 'PAK (100)', 'ACTIVE', NULL, NULL),
+(99, 'Kertas A3', 'ATK', 'RIM (1)', 'ACTIVE', NULL, NULL),
+(100, 'Kertas A4', 'ATK', 'RIM (1)', 'ACTIVE', NULL, NULL),
+(101, 'Kertas A4 80 Grm', 'ATK', 'RIM (1)', 'ACTIVE', NULL, NULL),
+(102, 'Kertas A4 Biru', 'ATK', 'RIM (1)', 'ACTIVE', NULL, NULL),
+(103, 'Kertas A4 Hijau', 'ATK', 'RIM (1)', 'ACTIVE', NULL, NULL),
+(104, 'Kertas A4 Kuning', 'ATK', 'RIM (1)', 'ACTIVE', NULL, NULL),
+(105, 'Kertas A4 Merah', 'ATK', 'RIM (1)', 'ACTIVE', NULL, NULL),
+(106, 'Kertas A4 Pink', 'ATK', 'RIM (1)', 'ACTIVE', NULL, NULL),
+(107, 'Kertas Buram', 'ATK', 'RIM (1)', 'ACTIVE', NULL, NULL),
+(108, 'Kertas Buram F4', 'ATK', 'RIM (1)', 'ACTIVE', NULL, NULL),
+(109, 'Kertas Concord Merah', 'ATK', 'RIM (1)', 'ACTIVE', NULL, NULL),
+(110, 'Kertas Concord Pink', 'ATK', 'RIM (1)', 'ACTIVE', NULL, NULL),
+(111, 'Kertas F4', 'ATK', 'RIM (1)', 'ACTIVE', NULL, NULL),
+(112, 'Kertas Fax 210 x 30', 'ATK', 'RIM (1)', 'ACTIVE', NULL, NULL),
+(113, 'Kertas Fax 216 x 30', 'ATK', 'RIM (1)', 'ACTIVE', NULL, NULL),
+(114, 'Kertas Magnet', 'ATK', 'RIM (1)', 'ACTIVE', NULL, NULL),
+(115, 'Kertas Sticker', 'ATK', 'RIM (1)', 'ACTIVE', NULL, NULL),
+(116, 'Kop Surat TCH', 'ATK', 'RIM (1)', 'ACTIVE', NULL, NULL),
+(117, 'Kwitansi Besar', 'ATK', 'BUKU (40)', 'ACTIVE', NULL, NULL),
+(118, 'Kwitansi Kecil', 'ATK', 'BUKU (40)', 'ACTIVE', NULL, NULL),
+(119, 'Lakban Hitam 1\'', 'ATK', 'ROLL (1)', 'ACTIVE', NULL, NULL),
+(120, 'Lakban Hitam 2\'', 'ATK', 'ROLL (1)', 'ACTIVE', NULL, NULL),
+(121, 'Lakban Kuning', 'ATK', 'ROLL (1)', 'ACTIVE', NULL, NULL),
+(122, 'Lem Kertas', 'ATK', 'BOX (30)', 'ACTIVE', NULL, NULL),
+(123, 'Map dengan Acco Biru (5001)', 'ATK', 'PAK (50)', 'ACTIVE', NULL, NULL),
+(124, 'Map dengan Acco Merah (5001)', 'ATK', 'PAK (50)', 'ACTIVE', NULL, NULL),
+(125, 'Map tanpa Acco', 'ATK', 'PAK (50)', 'ACTIVE', NULL, NULL),
+(126, 'Name Card Case Besar', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(127, 'Name Card Case Kecil', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(128, 'Ordner A4 Biru', 'ATK', 'BOX (15)', 'ACTIVE', NULL, NULL),
+(129, 'Ordner A5', 'ATK', 'BOX (15)', 'ACTIVE', NULL, NULL),
+(130, 'Ordner F4 Biru', 'ATK', 'BOX (15)', 'ACTIVE', NULL, NULL),
+(131, 'Ordner F4 Hitam', 'ATK', 'BOX (15)', 'ACTIVE', NULL, NULL),
+(132, 'Pembolong Kertas Besar No.85', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(133, 'Pembolong Kertas Kecil No.30', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(134, 'Penggaris', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(135, 'Penggaris Plat (Metal)', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(136, 'Penghapus Panaboard', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(137, 'Penghapus Pensil', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(138, 'Penghapus White Board', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(139, 'Pensil', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(140, 'Pesawat Telephone Ktr', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(141, 'Pita (U. Nama Brg Inventaris)', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(142, 'Pita Amano Absen Manual', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(143, 'Pita Amano Surat Jalan', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(144, 'Pita Brother', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(145, 'Pita Key Amano', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(146, 'Pita Printer LQ 2190', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(147, 'Pita Printer LQ 310', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(148, 'Pita Printer LQ300+II', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(149, 'Pita Printer LQ300+II (Cartige)', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(150, 'Pita Printer LX 300+', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(151, 'Pita Printer LX 300+ (Cartige)', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(152, 'Pita Printer LX 310', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(153, 'Plastik Jilid / Plastik Mika A4', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(154, 'Plastik Jilid / Plastik Mika F4', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(155, 'Plastik Laminating A3', 'ATK', 'PAK (100)', 'ACTIVE', NULL, NULL),
+(156, 'Plastik Laminating A4', 'ATK', 'PAK (100)', 'ACTIVE', NULL, NULL),
+(157, 'Plastik TSOP A3 2036 08 (Horizontal)', 'ATK', 'PAK (100)', 'ACTIVE', NULL, NULL),
+(158, 'Plastik TSOP A3 2037 08 (Vertikal)', 'ATK', 'PAK (100)', 'ACTIVE', NULL, NULL),
+(159, 'Plastik TSOP A4', 'ATK', 'PAK (100)', 'ACTIVE', NULL, NULL),
+(160, 'Post It 656', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(161, 'Post It Sign Here', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(162, 'Post It Warna', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(163, 'Push Pin', 'ATK', 'PAK (30)', 'ACTIVE', NULL, NULL),
+(164, 'Spidol Paint Marker Biru', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(165, 'Spidol Paint Marker Coklat', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(166, 'Spidol Paint Marker Hijau', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(167, 'Spidol Paint Marker Kuning Kecil', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(168, 'Spidol Paint Marker Merah', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(169, 'Spidol Paint Marker Pink', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(170, 'Spidol Paint Marker Putih Kecil', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(171, 'Spidol Paint Marker Silver', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(172, 'Spidol Paint Marker Ungu', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(173, 'Spidol Snowman Hitam', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(174, 'Spidol Snowman Kuning', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(175, 'Spidol Snowman Putih', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(176, 'Spidol White Board Biru', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(177, 'Spidol White Board Hitam', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(178, 'Spidol White Board Merah', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(179, 'Spidol White Permanen Hitam', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(180, 'Spidol White Permanen Merah', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(181, 'Stabilo Biru', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(182, 'Stabilo Hijau', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(183, 'Stabilo Kuning', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(184, 'Stamp Pad', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(185, 'Stapler (isi)', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(186, 'Stapler (isi) Besar No. 03', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(187, 'Stapler (Pencabut Stapler)', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(188, 'Stapler Besar', 'ATK', 'PAK (10)', 'ACTIVE', NULL, NULL),
+(189, 'Stapler Kecil', 'ATK', 'PAK (10)', 'ACTIVE', NULL, NULL),
+(190, 'Tas Trimitra Chitrahasta', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(191, 'Tinta Refill Biru', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(192, 'Tinta Refill Hitam', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(193, 'Tinta Refill Merah', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(194, 'Tinta Trodat Biru', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(195, 'Tinta Trodat Hijau', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(196, 'Tinta Trodat Kuning', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(197, 'Tinta Trodat Merah', 'ATK', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(198, 'Tipe Dispenser 1\'', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(199, 'Tipe Dispenser 2\'', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(200, 'Tipe X', 'ATK', 'BOX (12)', 'ACTIVE', NULL, NULL),
+(201, 'Tray 3 Susun (Eleghent Try)', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(202, 'Trigonal Clip (Kecil)', 'ATK', 'BOX (10)', 'ACTIVE', NULL, NULL),
+(203, 'Trigonal Clip No.05 (Besar)', 'ATK', 'BOX (10)', 'ACTIVE', NULL, NULL),
+(204, 'Trodat 1020', 'ATK', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(205, 'Zebra Line', 'ATK', 'ROLL (1)', 'ACTIVE', NULL, NULL),
+(206, 'Obat - Alkohol', 'Obat', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(207, 'Obat - Balsem', 'Obat', 'POT (1)', 'ACTIVE', NULL, NULL),
+(208, 'Obat - Betadin', 'Obat', 'BOX (6)', 'ACTIVE', NULL, NULL),
+(209, 'Obat - Bio Plasenton', 'Obat', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(210, 'Obat - Bodrek', 'Obat', 'PAK (240)', 'ACTIVE', NULL, NULL),
+(211, 'Obat - Decolgen', 'Obat', 'PAK (100)', 'ACTIVE', NULL, NULL),
+(212, 'Obat - Entrostop', 'Obat', 'BKS (144)', 'ACTIVE', NULL, NULL),
+(213, 'Obat - Hansaplast', 'Obat', 'PAK (100)', 'ACTIVE', NULL, NULL),
+(214, 'Obat - Hansaplast Roll', 'Obat', 'BOX (20)', 'ACTIVE', NULL, NULL),
+(215, 'Obat - Insidal', 'Obat', 'PAK (50)', 'ACTIVE', NULL, NULL),
+(216, 'Obat - Insto', 'Obat', 'PAK (12)', 'ACTIVE', NULL, NULL),
+(217, 'Obat - Kain Kasa', 'Obat', 'PAK (100)', 'ACTIVE', NULL, NULL),
+(218, 'Obat - Kapas', 'Obat', 'PAK (5)', 'ACTIVE', NULL, NULL),
+(219, 'Obat - Konidin', 'Obat', 'PAK (160)', 'ACTIVE', NULL, NULL),
+(220, 'Obat - Mextril', 'Obat', 'PAK (100)', 'ACTIVE', NULL, NULL),
+(221, 'Obat - Neuralgin', 'Obat', 'PAK (100)', 'ACTIVE', NULL, NULL),
+(222, 'Obat - Promag', 'Obat', 'PAK (120)', 'ACTIVE', NULL, NULL),
+(223, 'Obat - Paramex', 'Obat', 'PAK (200)', 'ACTIVE', NULL, NULL),
+(224, 'Obat - Procold', 'Obat', 'PAK (144)', 'ACTIVE', NULL, NULL),
+(225, 'Obat - Rivanol', 'Obat', 'PAK (10)', 'ACTIVE', NULL, NULL),
+(226, 'Obat - Sanaflu', 'Obat', 'PAK (100)', 'ACTIVE', NULL, NULL),
+(227, 'Obat - Saridon', 'Obat', 'PAK (120)', 'ACTIVE', NULL, NULL),
+(228, 'Obat - Ultraflu', 'Obat', 'PAK (100)', 'ACTIVE', NULL, NULL),
+(229, 'Obat - Yrins', 'Obat', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(230, 'Kanban - Lokal', 'Kanban', 'BOX (50)', 'ACTIVE', NULL, NULL),
+(231, 'Kanban - Export', 'Kanban', 'BOX (50)', 'ACTIVE', NULL, NULL),
+(232, 'Kanban - ADM - Roll', 'Kanban', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(233, 'Kanban - ADM - Ribbon', 'Kanban', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(234, 'Label - Hyundai', 'Kanban', 'PCS (1)', 'ACTIVE', NULL, NULL),
+(235, 'Label - Hyundai - Ribbon', 'Kanban', 'PCS (1)', 'ACTIVE', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -259,27 +485,6 @@ CREATE TABLE `gams_master_barang_log` (
   `user` varchar(50) NOT NULL,
   `note` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `gams_master_barang_log`
---
-
-INSERT INTO `gams_master_barang_log` (`id_log`, `item`, `date`, `time`, `status_change`, `user`, `note`) VALUES
-(16, 'Spidol', '2023-04-26', '20:46:18', 'KATEGORI | ADD', 'Fathur Rahmansyah', '-'),
-(17, 'Ballpoint', '2023-04-26', '20:46:28', 'KATEGORI | ADD', 'Fathur Rahmansyah', '-'),
-(18, 'Kertas', '2023-04-26', '20:46:38', 'KATEGORI | ADD', 'Fathur Rahmansyah', '-'),
-(19, 'Obat', '2023-04-26', '20:47:24', 'KATEGORI | ADD', 'Fathur Rahmansyah', '-'),
-(20, 'PCS', '2023-04-26', '20:47:35', 'UNIT | ADD', 'Fathur Rahmansyah', '-'),
-(21, 'lusin', '2023-04-26', '20:47:50', 'UNIT | ADD', 'Fathur Rahmansyah', '-'),
-(22, 'Ballpoint Standard Hitam', '2023-04-26', '20:48:43', 'BARANG | ADD', 'Fathur Rahmansyah', NULL),
-(23, 'Kertas A4 Putih', '2023-04-26', '20:59:19', 'BARANG | ADD', 'Fathur Rahmansyah', NULL),
-(24, 'Sapu', '2023-04-26', '21:32:55', 'BARANG | ADD', 'Fathur Rahmansyah', NULL),
-(25, 'Headset', '2023-04-27', '09:06:08', 'BARANG | ADD', 'Fathur Rahmansyah', NULL),
-(26, 'Mouse', '2023-04-27', '09:06:39', 'BARANG | ADD', 'Fathur Rahmansyah', NULL),
-(27, 'ATK', '2023-04-27', '13:43:07', 'KATEGORI | ADD', 'Fathur Rahmansyah', '-'),
-(28, 'Alat Kebersihan', '2023-04-27', '13:48:50', 'KATEGORI | ADD', 'Fathur Rahmansyah', '-'),
-(29, 'Tinta Catridge', '2023-04-27', '13:49:27', 'KATEGORI | ADD', 'Fathur Rahmansyah', '-'),
-(30, 'Botol', '2023-04-27', '13:55:11', 'UNIT | ADD', 'Fathur Rahmansyah', '-');
 
 -- --------------------------------------------------------
 
@@ -305,7 +510,8 @@ INSERT INTO `gams_master_tipe_barang` (`id_tipe`, `tipe_barang`, `created_at`, `
 (27, 'Alat Kebersihan', '2023-05-20 01:36:39', NULL, 'ACTIVE'),
 (28, 'Tinta ', '2023-05-20 01:36:40', NULL, 'ACTIVE'),
 (29, 'Form', '2023-05-20 01:36:41', NULL, 'ACTIVE'),
-(30, 'Pita', '2023-05-20 01:36:36', NULL, 'ACTIVE');
+(30, 'Pita', '2023-05-20 01:36:36', NULL, 'ACTIVE'),
+(31, 'Kanban', '2023-07-29 01:52:56', NULL, 'ACTIVE');
 
 -- --------------------------------------------------------
 
@@ -327,18 +533,34 @@ CREATE TABLE `gams_master_unit_barang` (
 --
 
 INSERT INTO `gams_master_unit_barang` (`id`, `unit`, `jumlah`, `created_at`, `updated_at`, `data_status`) VALUES
-(8, 'BH', 1, '2023-05-20 01:21:15', NULL, 'ACTIVE'),
-(9, 'BOTOL', 1, '2023-05-20 01:21:33', NULL, 'ACTIVE'),
-(10, 'BOX', 100, '2023-05-20 01:21:55', NULL, 'ACTIVE'),
-(11, 'BUKU', 1, '2023-05-20 01:22:19', NULL, 'ACTIVE'),
-(12, 'LUSIN', 12, '2023-05-20 01:22:50', NULL, 'ACTIVE'),
-(13, 'PAK (50)', 50, '2023-05-20 01:23:40', NULL, 'ACTIVE'),
-(14, 'PAK (100)', 100, '2023-05-20 01:23:52', NULL, 'ACTIVE'),
-(15, 'PAK (1)', 1, '2023-05-20 01:24:26', NULL, 'ACTIVE'),
-(16, 'PCS', 1, '2023-05-20 01:25:11', NULL, 'ACTIVE'),
-(17, 'POT', 1, '2023-05-20 01:25:48', NULL, 'ACTIVE'),
-(18, 'RIM', 1, '2023-05-20 01:25:58', NULL, 'ACTIVE'),
-(19, 'ROLL', 1, '2023-05-20 01:26:19', NULL, 'ACTIVE');
+(23, 'BOX (10)', 10, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(24, 'BOX (100)', 100, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(25, 'BOX (12)', 12, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(26, 'BOX (15)', 15, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(27, 'BOX (20)', 20, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(28, 'BOX (30)', 30, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(29, 'BOX (50)', 50, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(30, 'BOX (6)', 6, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(31, 'BUKU (1)', 1, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(32, 'BUKU (40)', 40, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(33, 'LUSIN (12)', 12, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(34, 'LUSIN (144)', 144, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(35, 'PAK (10)', 10, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(36, 'PAK (100)', 100, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(37, 'PAK (12)', 12, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(38, 'PAK (120)', 120, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(39, 'PAK (144)', 144, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(40, 'PAK (160)', 160, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(41, 'PAK (200)', 200, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(42, 'PAK (240)', 240, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(43, 'PAK (30)', 30, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(44, 'PAK (5)', 5, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(45, 'PAK (50)', 50, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(46, 'PCS (1)', 1, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(47, 'POT (1)', 1, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(48, 'RIM (1)', 1, '2023-08-07 03:18:46', NULL, 'ACTIVE'),
+(49, 'ROLL (1)', 1, '2023-08-07 02:33:58', NULL, 'ACTIVE'),
+(50, 'SET (2)', 2, '2023-08-07 02:33:58', NULL, 'ACTIVE');
 
 -- --------------------------------------------------------
 
@@ -404,11 +626,240 @@ CREATE TABLE `gams_stok_barang` (
 --
 
 INSERT INTO `gams_stok_barang` (`id_stok`, `nama_barang`, `kategori_barang`, `stok_barang`, `unit_barang`, `jml_per_unit`, `stok_pcs`, `data_status`, `created_by`, `created_at`, `updated_at`) VALUES
-(4, 'Acco Plastic', 'ATK', 3, 'PAK', 50, 130, 'ACTIVE', '', '2023-04-26', NULL),
-(5, 'Acco Steinless', 'ATK', 3, 'LUSIN', 12, 35, 'ACTIVE', '', '2023-04-26', NULL),
-(6, 'Address Telephone Index', 'ATK', 6, 'LUSIN', 12, 0, 'ACTIVE', '', '2023-04-27', NULL),
-(7, 'Amplop F4 Polos', 'ATK', 5, 'LUSIN', 12, 36, 'ACTIVE', '', '2023-04-27', NULL),
-(8, 'Amplop F4 TCH', 'ATK', 34, '', 0, 0, 'ACTIVE', '', '0000-00-00', NULL);
+(1, 'Acco Plastik', 'ATK', 0, 'PAK (50)', 50, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(2, 'Acco Steinless', 'ATK', 0, 'PAK (50)', 50, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(3, 'Adress & Telephone Index', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(4, 'Amplop F4 Polos', 'ATK', 0, 'BOX (100)', 100, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(5, 'Amplop F4 Tch', 'ATK', 0, 'PAK (100)', 100, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(6, 'Amplop Gaji', 'ATK', 0, 'PAK (100)', 100, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(7, 'Amplop Kecil Polos No.110', 'ATK', 0, 'BOX (100)', 100, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(8, 'Amplop No.90 Polos', 'ATK', 0, 'BOX (100)', 100, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(9, 'Amplop No.90 Tch', 'ATK', 0, 'BOX (100)', 100, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(10, 'Ballpoint', 'ATK', 0, 'LUSIN (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(11, 'Ballpoint (isi)', 'ATK', 0, 'LUSIN (144)', 144, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(12, 'Ballpoint Biru', 'ATK', 0, 'LUSIN (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(13, 'Ballpoint Meja Tripfelo', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(14, 'Ballpoint OPF Biru', 'ATK', 0, 'LUSIN (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(15, 'Ballpoint OPF Hijau', 'ATK', 0, 'LUSIN (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(16, 'Ballpoint OPF Hitam', 'ATK', 0, 'LUSIN (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(17, 'Ballpoint OPF Merah', 'ATK', 0, 'LUSIN (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(18, 'Ballpoint OPF Ungu', 'ATK', 0, 'LUSIN (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(19, 'Ballpoint OPM Biru', 'ATK', 0, 'LUSIN (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(20, 'Ballpoint OPM Hitam', 'ATK', 0, 'LUSIN (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(21, 'Ballpoint OPM Merah', 'ATK', 0, 'LUSIN (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(22, 'Baterai 23 A', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(23, 'Baterai 9V', 'ATK', 0, 'BOX (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(24, 'Baterai A2', 'ATK', 0, 'SET (2)', 2, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(25, 'Baterai A3', 'ATK', 0, 'SET (2)', 2, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(26, 'Baterai C2', 'ATK', 0, 'SET (2)', 2, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(27, 'Baterai CR1616', 'ATK', 0, 'BOX (10)', 10, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(28, 'Baterai CR2025', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(29, 'Baterai CR2032', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(30, 'Baterai D2', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(31, 'Baterai LR41', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(32, 'Baterai LR44', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(33, 'Baterai Recharge A2', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(34, 'Baterai Recharge A3', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(35, 'Binder Clip 107', 'ATK', 0, 'BOX (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(36, 'Binder Clip 155', 'ATK', 0, 'BOX (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(37, 'Binder Clip 200', 'ATK', 0, 'BOX (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(38, 'Binder Clip 260', 'ATK', 0, 'BOX (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(39, 'Box File Bantex 4011', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(40, 'Buku Expedisi', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(41, 'Buku Folio', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(42, 'Buku Kwarto', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(43, 'Buku Saku', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(44, 'Buku Sidu', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(45, 'Bussiness File A4', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(46, 'Bussiness File F4', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(47, 'Card Case A3', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(48, 'Card Case A4', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(49, 'Clear Holder A4', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(50, 'Clear Holder F4', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(51, 'Clear Holder Felix CH1160 Folio', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(52, 'Clip Board', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(53, 'Colour Magnet', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(54, 'Continous Form 2 Fly A4', 'ATK', 0, 'RIM (500)', 500, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(55, 'Continous Form 2 Fly A5', 'ATK', 0, 'RIM (500)', 500, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(56, 'Continous Form 3 Fly A4', 'ATK', 0, 'RIM (500)', 500, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(57, 'Continous Form 3 Fly A5', 'ATK', 0, 'RIM (500)', 500, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(58, 'Cutter Besar', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(59, 'Cutter Kecil', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(60, 'Dermatograf Coklat', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(61, 'Dermatograp Hitam', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(62, 'Dermatograp Kuning', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(63, 'Dermatograp Putih', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(64, 'Divider/ Pembatas Kertas', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(65, 'Double Tipe 1\'', 'ATK', 0, 'BOX (10)', 10, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(66, 'Form Advance Payment', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(67, 'Form Bukti Pengeluaran Kas', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(68, 'Form Cuti', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(69, 'Form Daftar Normatif Entertainment', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(70, 'Form Izin Dinas Luar', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(71, 'Form Laporan Biaya', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(72, 'Form Laporan Biaya Prjln Dns Lr Kt', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(73, 'Form Memo Polos', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(74, 'Form Peminjaman Kendaraan', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(75, 'Form Penerimaan Bank', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(76, 'Form Pengambilan Material', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(77, 'Form Pengeluaran Bank', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(78, 'Form Pengeluaran Kas', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(79, 'Form Permintaan Atk', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(80, 'Form Permohonan Izin', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(81, 'Form Rekapan S.Jalan Cust.', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(82, 'Form Rekapan S.Jalan Suplyr.', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(83, 'Form Risalah Rapat Hal : 1', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(84, 'Form Risalah Rapat Hal : 2', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(85, 'Form Service Kendaraan', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(86, 'Form SPL', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(87, 'Form Tanda Terima', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(88, 'Form Work Order', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(89, 'Formulir Kunjungan Tamu', 'ATK', 0, 'BUKU (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(90, 'Gunting Besar', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(91, 'Gunting Kecil', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(92, 'Isi Cutter Besar', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(93, 'Isi Cutter Kecil', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(94, 'Isi Pensil', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(95, 'Kalkulator 868 L', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(96, 'Kalkulator Saku', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(97, 'Kartu Absensi', 'ATK', 0, 'PAK (100)', 100, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(98, 'Kertas A3', 'ATK', 0, 'RIM (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(99, 'Kertas A4', 'ATK', 0, 'RIM (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(100, 'Kertas A4 80 Grm', 'ATK', 0, 'RIM (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(101, 'Kertas A4 Biru', 'ATK', 0, 'RIM (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(102, 'Kertas A4 Hijau', 'ATK', 0, 'RIM (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(103, 'Kertas A4 Kuning', 'ATK', 0, 'RIM (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(104, 'Kertas A4 Merah', 'ATK', 0, 'RIM (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(105, 'Kertas A4 Pink', 'ATK', 0, 'RIM (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(106, 'Kertas Buram', 'ATK', 0, 'RIM (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(107, 'Kertas Buram F4', 'ATK', 0, 'RIM (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(108, 'Kertas Concord Merah', 'ATK', 0, 'RIM (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(109, 'Kertas Concord Pink', 'ATK', 0, 'RIM (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(110, 'Kertas F4', 'ATK', 0, 'RIM (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(111, 'Kertas Fax 210 x 30', 'ATK', 0, 'RIM (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(112, 'Kertas Fax 216 x 30', 'ATK', 0, 'RIM (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(113, 'Kertas Magnet', 'ATK', 0, 'RIM (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(114, 'Kertas Sticker', 'ATK', 0, 'RIM (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(115, 'Kop Surat TCH', 'ATK', 0, 'RIM (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(116, 'Kwitansi Besar', 'ATK', 0, 'BUKU (40)', 40, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(117, 'Kwitansi Kecil', 'ATK', 0, 'BUKU (40)', 40, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(118, 'Lakban Hitam 1\'', 'ATK', 0, 'ROLL (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(119, 'Lakban Hitam 2\'', 'ATK', 0, 'ROLL (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(120, 'Lakban Kuning', 'ATK', 0, 'ROLL (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(121, 'Lem Kertas', 'ATK', 0, 'BOX (30)', 30, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(122, 'Map dengan Acco Biru (5001)', 'ATK', 0, 'PAK (50)', 50, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(123, 'Map dengan Acco Merah (5001)', 'ATK', 0, 'PAK (50)', 50, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(124, 'Map tanpa Acco', 'ATK', 0, 'PAK (50)', 50, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(125, 'Name Card Case Besar', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(126, 'Name Card Case Kecil', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(127, 'Ordner A4 Biru', 'ATK', 0, 'BOX (15)', 15, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(128, 'Ordner A5', 'ATK', 0, 'BOX (15)', 15, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(129, 'Ordner F4 Biru', 'ATK', 0, 'BOX (15)', 15, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(130, 'Ordner F4 Hitam', 'ATK', 0, 'BOX (15)', 15, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(131, 'Pembolong Kertas Besar No.85', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(132, 'Pembolong Kertas Kecil No.30', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(133, 'Penggaris', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(134, 'Penggaris Plat (Metal)', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(135, 'Penghapus Panaboard', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(136, 'Penghapus Pensil', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(137, 'Penghapus White Board', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(138, 'Pensil', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(139, 'Pesawat Telephone Ktr', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(140, 'Pita (U. Nama Brg Inventaris)', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(141, 'Pita Amano Absen Manual', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(142, 'Pita Amano Surat Jalan', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(143, 'Pita Brother', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(144, 'Pita Key Amano', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(145, 'Pita Printer LQ 2190', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(146, 'Pita Printer LQ 310', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(147, 'Pita Printer LQ300+II', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(148, 'Pita Printer LQ300+II (Cartige)', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(149, 'Pita Printer LX 300+', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(150, 'Pita Printer LX 300+ (Cartige)', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(151, 'Pita Printer LX 310', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(152, 'Plastik Jilid / Plastik Mika A4', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(153, 'Plastik Jilid / Plastik Mika F4', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(154, 'Plastik Laminating A3', 'ATK', 0, 'PAK (100)', 100, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(155, 'Plastik Laminating A4', 'ATK', 0, 'PAK (100)', 100, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(156, 'Plastik TSOP A3 2036 08 (Horizontal)', 'ATK', 0, 'PAK (100)', 100, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(157, 'Plastik TSOP A3 2037 08 (Vertikal)', 'ATK', 0, 'PAK (100)', 100, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(158, 'Plastik TSOP A4', 'ATK', 0, 'PAK (100)', 100, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(159, 'Post It 656', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(160, 'Post It Sign Here', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(161, 'Post It Warna', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(162, 'Push Pin', 'ATK', 0, 'PAK (30)', 30, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(163, 'Spidol Paint Marker Biru', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(164, 'Spidol Paint Marker Coklat', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(165, 'Spidol Paint Marker Hijau', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(166, 'Spidol Paint Marker Kuning Kecil', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(167, 'Spidol Paint Marker Merah', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(168, 'Spidol Paint Marker Pink', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(169, 'Spidol Paint Marker Putih Kecil', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(170, 'Spidol Paint Marker Silver', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(171, 'Spidol Paint Marker Ungu', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(172, 'Spidol Snowman Hitam', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(173, 'Spidol Snowman Kuning', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(174, 'Spidol Snowman Putih', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(175, 'Spidol White Board Biru', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(176, 'Spidol White Board Hitam', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(177, 'Spidol White Board Merah', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(178, 'Spidol White Permanen Hitam', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(179, 'Spidol White Permanen Merah', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(180, 'Stabilo Biru', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(181, 'Stabilo Hijau', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(182, 'Stabilo Kuning', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(183, 'Stamp Pad', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(184, 'Stapler (isi)', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(185, 'Stapler (isi) Besar No. 03', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(186, 'Stapler (Pencabut Stapler)', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(187, 'Stapler Besar', 'ATK', 0, 'PAK (10)', 10, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(188, 'Stapler Kecil', 'ATK', 0, 'PAK (10)', 10, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(189, 'Tas Trimitra Chitrahasta', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(190, 'Tinta Refill Biru', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(191, 'Tinta Refill Hitam', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(192, 'Tinta Refill Merah', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(193, 'Tinta Trodat Biru', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(194, 'Tinta Trodat Hijau', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(195, 'Tinta Trodat Kuning', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(196, 'Tinta Trodat Merah', 'ATK', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(197, 'Tipe Dispenser 1\'', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(198, 'Tipe Dispenser 2\'', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(199, 'Tipe X', 'ATK', 0, 'BOX (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(200, 'Tray 3 Susun (Eleghent Try)', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(201, 'Trigonal Clip (Kecil)', 'ATK', 0, 'BOX (10)', 10, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(202, 'Trigonal Clip No.05 (Besar)', 'ATK', 0, 'BOX (10)', 10, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(203, 'Trodat 1020', 'ATK', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(204, 'Zebra Line', 'ATK', 0, 'ROLL (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(205, 'Obat - Alkohol', 'Obat', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(206, 'Obat - Balsem', 'Obat', 0, 'POT (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(207, 'Obat - Betadin', 'Obat', 0, 'BOX (6)', 6, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(208, 'Obat - Bio Plasenton', 'Obat', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(209, 'Obat - Bodrek', 'Obat', 0, 'PAK (240)', 240, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(210, 'Obat - Decolgen', 'Obat', 0, 'PAK (100)', 100, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(211, 'Obat - Entrostop', 'Obat', 0, 'BKS (144)', 144, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(212, 'Obat - Hansaplast', 'Obat', 0, 'PAK (100)', 100, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(213, 'Obat - Hansaplast Roll', 'Obat', 0, 'BOX (20)', 20, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(214, 'Obat - Insidal', 'Obat', 0, 'PAK (50)', 50, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(215, 'Obat - Insto', 'Obat', 0, 'PAK (12)', 12, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(216, 'Obat - Kain Kasa', 'Obat', 0, 'PAK (100)', 100, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(217, 'Obat - Kapas', 'Obat', 0, 'PAK (5)', 5, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(218, 'Obat - Konidin', 'Obat', 0, 'PAK (160)', 160, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(219, 'Obat - Mextril', 'Obat', 0, 'PAK (100)', 100, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(220, 'Obat - Neuralgin', 'Obat', 0, 'PAK (100)', 100, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(221, 'Obat - Promag', 'Obat', 0, 'PAK (120)', 120, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(222, 'Obat - Paramex', 'Obat', 0, 'PAK (200)', 200, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(223, 'Obat - Procold', 'Obat', 0, 'PAK (144)', 144, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(224, 'Obat - Rivanol', 'Obat', 0, 'PAK (10)', 10, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(225, 'Obat - Sanaflu', 'Obat', 0, 'PAK (100)', 100, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(226, 'Obat - Saridon', 'Obat', 0, 'PAK (120)', 120, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(227, 'Obat - Ultraflu', 'Obat', 0, 'PAK (100)', 100, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(228, 'Obat - Yrins', 'Obat', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(229, 'Kanban - Lokal', 'Kanban', 0, 'BOX (50)', 50, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(230, 'Kanban - Export', 'Kanban', 0, 'BOX (50)', 50, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(231, 'Kanban - ADM - Roll', 'Kanban', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(232, 'Kanban - ADM - Ribbon', 'Kanban', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(233, 'Label - Hyundai', 'Kanban', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL),
+(234, 'Label - Hyundai - Ribbon', 'Kanban', 0, 'PCS (1)', 1, 0, 'ACTIVE', 'Fathur Rahmansyah', '2023-04-26', NULL);
 
 -- --------------------------------------------------------
 
@@ -430,15 +881,6 @@ CREATE TABLE `gams_stok_keluar` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `gams_stok_keluar`
---
-
-INSERT INTO `gams_stok_keluar` (`id_stok_out`, `tanggal`, `no_trans`, `nik`, `nama`, `bagian`, `keterangan`, `nama_barang`, `kategori`, `jumlah`, `created_at`, `updated_at`) VALUES
-(7, '2023-05-29', '202305001', '5211', 'Fathur Rahmansyah', 'IT', 'Test', 'Acco Plastic', 'ATK', 1, '2023-05-29 14:02:00', '2023-05-29 14:02:00'),
-(8, '2023-05-30', '202305002', '5211', 'Fathur Rahmansyah', 'IT', 'Test', 'Acco Plastic', 'ATK', 20, '2023-05-30 04:42:19', '2023-05-30 04:42:19'),
-(9, '2023-05-30', '202305003', '5211', 'Fathur Rahmansyah', 'IT', 'Test', 'Acco Steinless', 'ATK', 13, '2023-05-30 05:59:41', '2023-05-30 05:59:41');
 
 --
 -- Triggers `gams_stok_keluar`
@@ -479,18 +921,6 @@ CREATE TABLE `gams_stok_masuk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `gams_stok_masuk`
---
-
-INSERT INTO `gams_stok_masuk` (`id_stok_in`, `no_transaksi`, `tanggal`, `keterangan`, `nama_barang`, `tipe`, `unit`, `jumlah`, `created_at`, `created_by`, `updated_at`) VALUES
-(17, '202304-001', '2023-04-27', 's', 'Sapu', 'Ballpoint', 'LUSIN', 12, '2023-04-27 03:43:42', 'Fathur Rahmansyah', '2023-04-27 03:43:42'),
-(18, '202304-002', '2023-04-27', 'untuk', 'Sapu', 'Ballpoint', 'LUSIN', 12, '2023-04-27 04:32:40', 'Fathur Rahmansyah', '2023-04-27 04:32:40'),
-(19, '202304-003', '2023-04-27', 'dsadas', 'Sapu', 'Ballpoint', 'LUSIN', 24, '2023-04-27 04:33:56', 'Fathur Rahmansyah', '2023-04-27 04:33:56'),
-(20, '202304-003', '2023-04-27', 'dsadas', 'Mouse', 'Ballpoint', 'LUSIN', 36, '2023-04-27 04:33:56', 'Fathur Rahmansyah', '2023-04-27 04:33:56'),
-(21, '202304-004', '2023-04-27', 'untuk', 'Sapu', 'Ballpoint', 'LUSIN', 12, '2023-04-27 04:43:56', 'Fathur Rahmansyah', '2023-04-27 04:43:56'),
-(22, '202304-005', '2023-04-27', 'untuk', 'Kertas A4 Putih', 'Kertas', 'PCS', 18, '2023-04-27 08:32:52', 'Fathur Rahmansyah', '2023-04-27 08:32:52');
-
---
 -- Triggers `gams_stok_masuk`
 --
 DELIMITER $$
@@ -523,16 +953,6 @@ CREATE TABLE `gams_stok_masuk_void` (
   `created_at` timestamp NULL DEFAULT NULL,
   `note` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `gams_stok_masuk_void`
---
-
-INSERT INTO `gams_stok_masuk_void` (`id_gsm_log`, `no_transaksi`, `nama_barang`, `jumlah`, `tipe`, `created_at`, `note`) VALUES
-(1, '202304-006', 'Kertas A4 Putih', 3, 'BARANG MASUK | VOID', '2023-06-01 03:14:52', 'ss'),
-(2, '202306-001', 'Acco Plastic', 150, 'BARANG MASUK | VOID', '2023-06-01 04:26:29', '33'),
-(3, '202306-001', 'Acco Plastic', 50, 'BARANG MASUK | VOID', '2023-06-01 06:25:56', '2123'),
-(4, '202306-001', 'Acco Plastic', 50, 'BARANG MASUK | VOID', '2023-06-01 06:29:38', 'trtr');
 
 --
 -- Triggers `gams_stok_masuk_void`
@@ -909,11 +1329,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `role`, `name`, `section`, `position`, `nik`, `nik_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'Fathur Rahmansyah', 'IT', 'MGR', '5211', NULL, '$2y$10$mFd/MmGV8nElaHO7wGEMI.K79Pxoyhk9qcnN9LhGZ/me8iZNz/7Gi', 'blPAFBGACi8nQ0VjXq8KQBjBfwxsOXZx1NPjfap36ajfSYeanA0dx03vVGN0', '2021-03-08 21:20:24', '2021-03-08 21:20:24'),
+(1, 'admin', 'Fathur Rahmansyah', 'IT', 'MGR', '5211', NULL, '$2y$10$mFd/MmGV8nElaHO7wGEMI.K79Pxoyhk9qcnN9LhGZ/me8iZNz/7Gi', 'Z4BrkjzrXRnwOfmvRjdM8D9ewFVASZn5EZXSMjOzSlZCEGnSKPi2MjAPvWn2', '2021-03-08 21:20:24', '2021-03-08 21:20:24'),
 (8, 'admin', 'Hanifan Musliman', 'IT', '', '5254', NULL, '$2y$10$6bdnOdo.fIjGjxlSoU6ZqeoIurkaPNXmSLZyJ5HOe51X6DlCTlpTe', 'sbsqJIKAtK1ukQSRvcfFrGJOts94oeLrRBCUuwYE5GZxgnf2F7TmnM7lAgsM', '2021-11-24 03:48:26', '2021-11-24 03:48:26'),
-(10, 'user', 'Test', 'IT', 'STAFF', '1111', NULL, '$2y$10$CUtNOr17iklSSR4GvRdH9u2R5c3G6.DrsIfGHS.IZaoTWmwmt1MsK', 'ymFKxYgqbCthhVCMYAH6Hj1q4aD3tP752fXnewJSWzW7eIHD43insKSxNI5A', '2022-02-21 00:24:21', '2022-02-21 00:24:21'),
-(15, 'user', 'Fiki Afyudan G', 'Schedule & Control', '', '3403', NULL, '$2y$10$7Kb40e/evwZmpVoy7hl0su5xxenMCYt/IlKO6sYucpnjtmjX5dRM6', 'coP5EXdnETUvsg966xwClmamLyIGOiorLKPwpc43L9X3hVFohtPadwYDX9NC', '2022-09-20 07:03:12', '2022-09-20 07:03:12'),
-(16, 'admin', 'M Rizqi Nur Alif', 'IT', '', '5479', NULL, '$2y$10$6Yg6qjXD31gBMaXsK2Lk7eU0HOMv36/GtuStQVw47Reclt4eFh2UG', 'YWnoCkA39uqGqxH4aeqANDRxKsEkG2q0GiVbleYJ7Gk0nDYJj4OuTeyeFOrq', '2022-09-20 07:19:11', '2022-09-20 07:19:11');
+(10, 'user', 'Test', 'IT', 'STAFF', '1111', NULL, '$2y$10$CUtNOr17iklSSR4GvRdH9u2R5c3G6.DrsIfGHS.IZaoTWmwmt1MsK', '5t2JiDWtC3nYx6oUDj0dBiXkL6xu4sGvelRirotkhUtBA3ER5Tf5lzxSlJ5g', '2022-02-21 00:24:21', '2022-02-21 00:24:21'),
+(16, 'admin', 'M Rizqi Nur Alif', 'IT', '', '5479', NULL, '$2y$10$6Yg6qjXD31gBMaXsK2Lk7eU0HOMv36/GtuStQVw47Reclt4eFh2UG', 'YWnoCkA39uqGqxH4aeqANDRxKsEkG2q0GiVbleYJ7Gk0nDYJj4OuTeyeFOrq', '2022-09-20 07:19:11', '2022-09-20 07:19:11'),
+(17, 'admin', 'Gina Andriyani', 'GA', '', '5243', NULL, '$2y$10$pe32Wm1hC0A8MkQliivtBeThLzDzy9yvAVrKsjC0GVZZNiSooEAj.', 'tDOmiDfJPLMY5FrNFQBkMBY2RtDZKBWA66AKWOMjacRXMsa1RK86uomXvmgm', '2023-07-25 04:27:42', '2023-07-25 04:27:42');
 
 -- --------------------------------------------------------
 
@@ -994,7 +1414,7 @@ ALTER TABLE `gams_stok_keluar`
 -- Indexes for table `gams_stok_masuk`
 --
 ALTER TABLE `gams_stok_masuk`
-  ADD PRIMARY KEY (`id_stok_in`);
+  ADD PRIMARY KEY (`id_stok_in`) USING BTREE;
 
 --
 -- Indexes for table `gams_stok_masuk_void`
@@ -1107,25 +1527,25 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `gams_master_barang`
 --
 ALTER TABLE `gams_master_barang`
-  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2279;
 
 --
 -- AUTO_INCREMENT for table `gams_master_barang_log`
 --
 ALTER TABLE `gams_master_barang_log`
-  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `gams_master_tipe_barang`
 --
 ALTER TABLE `gams_master_tipe_barang`
-  MODIFY `id_tipe` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_tipe` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `gams_master_unit_barang`
 --
 ALTER TABLE `gams_master_unit_barang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `gams_permintaan_barang`
@@ -1137,19 +1557,19 @@ ALTER TABLE `gams_permintaan_barang`
 -- AUTO_INCREMENT for table `gams_stok_barang`
 --
 ALTER TABLE `gams_stok_barang`
-  MODIFY `id_stok` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_stok` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=235;
 
 --
 -- AUTO_INCREMENT for table `gams_stok_keluar`
 --
 ALTER TABLE `gams_stok_keluar`
-  MODIFY `id_stok_out` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_stok_out` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `gams_stok_masuk`
 --
 ALTER TABLE `gams_stok_masuk`
-  MODIFY `id_stok_in` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_stok_in` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `gams_stok_masuk_void`
@@ -1203,7 +1623,7 @@ ALTER TABLE `tb_section`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `users_old`
