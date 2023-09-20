@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Employee;
 use Illuminate\Http\Request;
-use Illuminate\support\facades\DB;
+use DB;
 use Session;
 use Alert;
 
